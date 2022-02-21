@@ -12,11 +12,12 @@ struct CustomBorderViewModifier: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .padding(.vertical, 8)
+            .padding(.vertical, 12)
             .padding(.horizontal, 16)
             .background(.white)
+            .cornerRadius(16)
             .overlay(
-                RoundedRectangle(cornerRadius: 4)
+                RoundedRectangle(cornerRadius: 16)
                     .stroke(lineWidth: 1)
                     .foregroundColor(
                         highlight ? .blue : .gray.opacity(0.4)
