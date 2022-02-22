@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35B4E80227C50E26000A96E5 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B4E80127C50E26000A96E5 /* Color+Extension.swift */; };
+		35B4E80327C50E26000A96E5 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B4E80127C50E26000A96E5 /* Color+Extension.swift */; };
 		35CCC79827C3F82100E9C726 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CCC79727C3F82100E9C726 /* Tests_iOS.swift */; };
 		35CCC79A27C3F82100E9C726 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CCC79927C3F82100E9C726 /* Tests_iOSLaunchTests.swift */; };
 		35CCC7A427C3F82100E9C726 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CCC7A327C3F82100E9C726 /* Tests_macOS.swift */; };
@@ -39,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		35B4E80127C50E26000A96E5 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		35CCC77F27C3F82000E9C726 /* ContabilizeiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContabilizeiApp.swift; sourceTree = "<group>"; };
 		35CCC78127C3F82100E9C726 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35CCC78627C3F82100E9C726 /* Contabilizei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contabilizei.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35B4E80027C50E08000A96E5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				35B4E80127C50E26000A96E5 /* Color+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		35CCC77927C3F82000E9C726 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				35CCC77F27C3F82000E9C726 /* ContabilizeiApp.swift */,
+				35B4E80027C50E08000A96E5 /* Extensions */,
 				35CCC7C327C4299C00E9C726 /* Modifiers */,
 				35CCC7BB27C4132200E9C726 /* Login */,
 				35CCC78127C3F82100E9C726 /* Assets.xcassets */,
@@ -330,6 +342,7 @@
 				35CCC7BD27C4132D00E9C726 /* LoginView.swift in Sources */,
 				35CCC7A727C3F82100E9C726 /* ContabilizeiApp.swift in Sources */,
 				35CCC7C627C42A4000E9C726 /* CustomBorderViewModifier.swift in Sources */,
+				35B4E80227C50E26000A96E5 /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +353,7 @@
 				35CCC7C227C41CA100E9C726 /* LoginView.swift in Sources */,
 				35CCC7A827C3F82100E9C726 /* ContabilizeiApp.swift in Sources */,
 				35CCC7C727C42A4000E9C726 /* CustomBorderViewModifier.swift in Sources */,
+				35B4E80327C50E26000A96E5 /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
