@@ -13,9 +13,9 @@ struct CustomBorderViewModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .padding()
-            .background(Color.white)
+            .background(.background)
             .clipShape(Capsule())
-            .shadow(color: .gainsboro, radius: 2, x: 0, y: 2)
+            .shadow(color: .black.opacity(0.15), radius: 2, x: 0, y: 2)
             .overlay(
                 Capsule()
                     .stroke(lineWidth: 2)
