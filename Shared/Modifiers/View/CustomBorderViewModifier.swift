@@ -20,7 +20,7 @@ struct CustomBorderViewModifier: ViewModifier {
                 Capsule()
                     .stroke(lineWidth: 2)
                     .foregroundColor(
-                        highlight ? .blue : .gainsboro
+                        highlight ? .sapphire : .gainsboro
                     )
             )
     }
