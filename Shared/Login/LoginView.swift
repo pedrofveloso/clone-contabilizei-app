@@ -14,22 +14,22 @@ struct LoginView: View {
 
     @State var isLoading: Bool = false
     
+    @Environment(\.verticalSizeClass) var verticalSize
+    
     var body: some View {
         ZStack {
             LoginBackgroundView()
             
-            VStack {
-                LogoView()
-                Spacer()
-                FormView(login: $login,
-                         password: $password,
-                         rememberMe: $rememberMe)
-                Spacer()
-                FullWidthButton(title: "Entrar",
-                                isLoading: $isLoading)
-                    .tint(.white)
-                    .background(Color.sapphire)
-                    .ignoresSafeArea(.all, edges: .bottom)
+            if verticalSize == .regular {
+                PortraitView(login: $login,
+                             password: $password,
+                             rememberMe: $rememberMe,
+                             isLoading: $isLoading)
+            } else {
+                LandscapeView(login: $login,
+                              password: $password,
+                              rememberMe: $rememberMe,
+                              isLoading: $isLoading)
             }
         }
     }
@@ -38,7 +38,71 @@ struct LoginView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
-.previewInterfaceOrientation(.portraitUpsideDown)
+    }
+}
+
+private struct PortraitView: View {
+    @Binding var login: String
+    @Binding var password: String
+    @Binding var rememberMe: Bool
+    @Binding var isLoading: Bool
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            LogoView()
+            Spacer()
+            Text("Entre na sua conta")
+                .font(.largeTitle)
+                .bold()
+                .padding(.vertical, 8)
+                .padding(.horizontal, 24)
+            FormView(login: $login,
+                     password: $password,
+                     rememberMe: $rememberMe)
+            Spacer()
+            FullWidthButton(title: "Entrar",
+                            isLoading: $isLoading)
+                .tint(.white)
+                .clipShape(Capsule())
+                .background(Color.sapphire)
+                .ignoresSafeArea(.all, edges: .bottom)
+        }
+    }
+}
+
+private struct LandscapeView: View {
+    @Binding var login: String
+    @Binding var password: String
+    @Binding var rememberMe: Bool
+    @Binding var isLoading: Bool
+    
+    var body: some View {
+        HStack {
+            VStack {
+                LogoView()
+                    .padding()
+                Spacer()
+                HStack {
+                    FormView(login: $login,
+                             password: $password,
+                             rememberMe: $rememberMe)
+                }
+                Spacer()
+            }
+            Button {
+                isLoading.toggle()
+            } label: {
+                VStack{
+                    Spacer()
+                    Image(systemName: "chevron.right.2")
+                        .font(.title)
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 36)
+                    Spacer()
+                }
+                .background(Color.sapphire)
+            }
+        }
     }
 }
 
@@ -85,14 +149,10 @@ private struct FormView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Entre na sua conta")
-                .font(.largeTitle)
-                .bold()
-            
             Text("e-mail / CPF")
                 .foregroundColor(.gray)
                 .font(.headline)
-            
+
             SystemIconTextField(title: "Digite e-mail ou CPF",
                                 iconSystemName: "person.text.rectangle",
                                 text: $login)
